@@ -1,0 +1,24 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on('ready',async () => {
+console.log("Ready");
+
+let c = client.channels.get("515817262964408320");
+setInterval(() => {
+let sentences = ["neeeega", "how are you?", "im fine", "lol", "xd","haha","xdffef", "Hey i think im", "the best" , "YAYY",];
+
+c.send(sentences[Math.floor(Math.random() * sentences.length)]);
+}, 10);
+});
+
+client.on('message', message => {
+   
+    let args = message.content.split(' ').slice(1).join(' ');
+   
+  if (message.content === 'credit7') {
+      message.channel.send(`#credit`)
+  }
+  });
+
+client.login(process.env.TOKEN);// áÇ ÊÛíÑ İíåÇ ÔíÁáÇ ÊÛíÑ İíåÇ ÔíÁ
